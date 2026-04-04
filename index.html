@@ -395,6 +395,9 @@ body {
   font-size: 0.95rem;
   transition: var(--transition);
   margin: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .cta-btn:hover {
@@ -412,6 +415,60 @@ body {
 .cta-btn.outline:hover {
   background: var(--navy);
   color: var(--white);
+}
+
+/* Interest Form */
+.interest-form {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 0.75rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--steel);
+  box-shadow: 0 0 0 2px rgba(42, 95, 143, 0.15);
+}
+
+.form-submit-wrap {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.thank-you-msg {
+  background: #eafaf1;
+  border: 1px solid #abebc6;
+  color: #1e8449;
+  padding: 1.25rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Callout */
@@ -651,7 +708,7 @@ body {
     </div>
     <div class="section-body">
       <div class="section-content">
-        <p>PAI Consulting specializes in aviation Safety Management System implementation and regulatory compliance. We help Part 141 flight schools build practical, effective safety and quality programs&mdash;not just paperwork.</p>
+        <p>PAI Consulting specializes in aviation Safety Management System implementation and regulatory compliance. We work with Part 141 flight schools to build practical, effective safety and quality programs&mdash;not just paperwork.</p>
 
         <h3>Our Services</h3>
         <ul>
@@ -663,14 +720,39 @@ body {
         </ul>
 
         <div class="callout">
-          Whether you're starting from scratch or looking to strengthen what you already have, we can help you get ready for what's coming.
+          Whether you're starting from scratch or looking to strengthen what you already have, these are the kinds of engagements we take on. Reach out below to start a conversation.
         </div>
 
-        <div class="cta-section">
-          <h3>Ready to Get Started?</h3>
-          <p>Contact us for a no-obligation conversation about your school's SMS and QMS readiness.</p>
-          <a href="mailto:info@paiconsulting.com" class="cta-btn">Contact PAI Consulting</a>
-          <a href="https://paiconsulting.com" target="_blank" rel="noopener" class="cta-btn outline">Visit paiconsulting.com</a>
+        <div class="cta-section" id="interestSection">
+          <h3>Interested in Working Together?</h3>
+          <p>We're selectively taking on new Part 141 SMS and QMS engagements. Join our interest list and we'll reach out as capacity allows.</p>
+          <form class="interest-form" id="interestForm" onsubmit="submitInterestForm(event)">
+            <div class="form-group">
+              <label for="formName">Name</label>
+              <input type="text" id="formName" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="formSchool">School Name</label>
+              <input type="text" id="formSchool" name="school" required placeholder="Your flight school">
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email Address</label>
+              <input type="email" id="formEmail" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="formTimeline">Timeline</label>
+              <select id="formTimeline" name="timeline" required>
+                <option value="" disabled selected>Select your timeline</option>
+                <option value="Researching options">Researching options</option>
+                <option value="Need to comply within 6 months">Need to comply within 6 months</option>
+                <option value="Need to comply within a year">Need to comply within a year</option>
+                <option value="Just curious">Just curious</option>
+              </select>
+            </div>
+            <div class="form-submit-wrap">
+              <button type="submit" class="cta-btn">Join Our Interest List</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -736,6 +818,31 @@ function toggleSection(header) {
 document.querySelectorAll('.section-card.open .section-body').forEach(function(body) {
   body.style.maxHeight = 'none';
 });
+
+// Interest form submission
+function submitInterestForm(e) {
+  e.preventDefault();
+  var name = document.getElementById('formName').value.trim();
+  var school = document.getElementById('formSchool').value.trim();
+  var email = document.getElementById('formEmail').value.trim();
+  var timeline = document.getElementById('formTimeline').value;
+
+  var subject = encodeURIComponent('SMS Interest List: ' + school);
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'School: ' + school + '\n' +
+    'Email: ' + email + '\n' +
+    'Timeline: ' + timeline
+  );
+
+  window.location.href = 'mailto:info@paiconsulting.com?subject=' + subject + '&body=' + body;
+
+  var section = document.getElementById('interestSection');
+  section.innerHTML =
+    '<div class="thank-you-msg">' +
+    'Thank you &mdash; we\u2019ll be in touch as capacity allows. In the meantime, the guide above is a great place to start.' +
+    '</div>';
+}
 
 // Checklist scoring
 function updateScore() {
