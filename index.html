@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part 141 SMS & QMS Readiness Guide | PAI Consulting</title>
+<meta name="description" content="FAA Part 141 flight school SMS and QMS readiness guide. Understand the National Flight Training Alliance proposals and prepare your school.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1a3c5e;
+  --steel: #2a5f8f;
+  --light-bg: #f4f7fa;
+  --white: #ffffff;
+  --text: #2c3e50;
+  --text-light: #5a6a7a;
+  --border: #d1dbe6;
+  --accent: #e8f0f8;
+  --green: #27ae60;
+  --amber: #f39c12;
+  --red: #c0392b;
+  --shadow: 0 2px 8px rgba(26, 60, 94, 0.08);
+  --shadow-lg: 0 4px 16px rgba(26, 60, 94, 0.12);
+  --radius: 8px;
+  --transition: 0.25s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+  color: var(--white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo span { font-weight: 400; opacity: 0.85; }
+
+.header-link {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.header-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+
+/* Main */
+.main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+/* Banner */
+.banner {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.banner h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.banner .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.banner-item strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+  margin-bottom: 0.25rem;
+}
+
+.deadline-box {
+  background: rgba(243, 156, 18, 0.2);
+  border: 2px solid rgba(243, 156, 18, 0.5);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.deadline-box .label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.deadline-box .countdown {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f5c842;
+}
+
+.deadline-past { color: #ff8a80 !important; }
+
+/* Sections */
+.section-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+  transition: background var(--transition);
+}
+
+.section-header:hover { background: var(--accent); }
+
+.section-number {
+  background: var(--navy);
+  color: var(--white);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  flex: 1;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  color: var(--steel);
+}
+
+.section-card.open .chevron { transform: rotate(180deg); }
+
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section-content {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-content h3 {
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.section-content h3:first-child { margin-top: 1rem; }
+
+.section-content p,
+.section-content li {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.section-content ul, .section-content ol {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.section-content li { margin-bottom: 0.4rem; }
+
+/* Proposal Cards */
+.proposal-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.proposal-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--steel);
+}
+
+.proposal-card .card-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.proposal-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.proposal-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.55;
+}
+
+/* Pillars */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.pillar {
+  background: var(--accent);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.pillar-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+
+.pillar h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.pillar p { font-size: 0.8rem; color: var(--text-light); }
+
+/* Checklist */
+.checklist { list-style: none; padding: 0; margin: 1rem 0; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--steel);
+  cursor: pointer;
+}
+
+.checklist label {
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.assessment-result {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.result-not-started {
+  background: #fdecea;
+  color: var(--red);
+  border: 1px solid #f5c6cb;
+}
+
+.result-in-progress {
+  background: #fef9e7;
+  color: #b7950b;
+  border: 1px solid #f9e79f;
+}
+
+.result-well-positioned {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #abebc6;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--accent);
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cta-section h3 {
+  margin: 0 0 0.5rem !important;
+  font-size: 1.1rem;
+}
+
+.cta-section p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  margin: 0.25rem;
+}
+
+.cta-btn:hover {
+  background: var(--steel);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.cta-btn.outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+
+.cta-btn.outline:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Callout */
+.callout {
+  background: var(--accent);
+  border-left: 4px solid var(--steel);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.site-footer p { max-width: 700px; margin: 0 auto 0.5rem; }
+.site-footer .copyright { opacity: 0.6; margin-top: 1rem; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .banner { padding: 1.75rem 1.25rem; }
+  .banner h1 { font-size: 1.35rem; }
+  .banner-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .section-header { padding: 1rem 1.25rem; }
+  .section-content { padding: 0 1.25rem 1.25rem; }
+  .deadline-box { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://paiconsulting.com" class="logo" target="_blank" rel="noopener">PAI <span>Consulting</span></a>
+    <a href="https://paiconsulting.com" class="header-link" target="_blank" rel="noopener">paiconsulting.com</a>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Part 141 SMS &amp; QMS Readiness Guide</h1>
+    <p class="subtitle">What the National Flight Training Alliance report means for your flight school</p>
+    <div class="banner-grid">
+      <div class="banner-item">
+        <strong>What</strong>
+        FAA-backed report proposes mandatory SMS + QMS for all Part 141 certificated flight schools
+      </div>
+      <div class="banner-item">
+        <strong>Source</strong>
+        471-page National Flight Training Alliance report filed March 31, 2026
+      </div>
+      <div class="banner-item">
+        <strong>Impact</strong>
+        Sweeping overhaul of Part 141 flight training regulations
+      </div>
+      <div class="banner-item">
+        <strong>Action</strong>
+        FAA comment period open now &mdash; your input matters
+      </div>
+    </div>
+    <div class="deadline-box">
+      <span class="label">FAA Comment Deadline: April 10, 2026</span>
+      <span class="countdown" id="countdown"></span>
+    </div>
+  </div>
+
+  <!-- Section 1: What the Report Proposes -->
+  <div class="section-card open" data-section="proposals">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-number">1</span>
+      <span class="section-title">What the Report Proposes</span>
+      <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>The NFTA report outlines five major areas of regulatory modernization for Part 141 flight schools:</p>
+        <div class="proposal-grid">
+          <div class="proposal-card">
+            <div class="card-label">Proposal A</div>
+            <h4>Central Management Office (CMO)</h4>
+            <p>Centralized certification nationwide, replacing uneven local FSDO interpretations with consistent national standards for Part 141 oversight.</p>
+          </div>
+          <div class="proposal-card">
+            <div class="card-label">Proposal B</div>
+            <h4>Mandatory SMS for All Part 141 Schools</h4>
+            <p>Formal Safety Management Systems would be required&mdash;not optional. Every certificated school would need a functioning SMS aligned with ICAO standards.</p>
+          </div>
+          <div class="proposal-card">
+            <div class="card-label">Proposal C</div>
+            <h4>Two-Tier Quality Management System</h4>
+            <p>Schools must demonstrate both documented procedures AND measurable results. QMS goes beyond paperwork&mdash;it requires evidence that your processes actually work.</p>
+          </div>
+          <div class="proposal-card">
+            <div class="card-label">Proposal D</div>
+            <h4>Expanded Simulation &amp; XR Credit</h4>
+            <p>New credit allowances for flight simulation devices, extended reality (XR) training, and a new Enhanced Advanced Aviation Training Device (EAATD) category.</p>
+          </div>
+          <div class="proposal-card">
+            <div class="card-label">Proposal E</div>
+            <h4>Overhauled Examining Authority</h4>
+            <p>Pass-rate thresholds replaced by system maturity metrics, instructor standardization requirements, and internal evaluation capabilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: What SMS Would Mean -->
+  <div class="section-card" data-section="sms">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-number">2</span>
+      <span class="section-title">What SMS Would Mean for Your School</span>
+      <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <h3>The Four Pillars of SMS</h3>
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-icon">&#x1F4CB;</div>
+            <h4>Safety Policy</h4>
+            <p>Management commitment, safety objectives, accountable executive designation</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">&#x26A0;&#xFE0F;</div>
+            <h4>Safety Risk Management</h4>
+            <p>Hazard identification, risk analysis, risk assessment and mitigation</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">&#x1F4CA;</div>
+            <h4>Safety Assurance</h4>
+            <p>Safety performance monitoring, management of change, continuous improvement</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">&#x1F393;</div>
+            <h4>Safety Promotion</h4>
+            <p>Safety training, safety communication, building a positive safety culture</p>
+          </div>
+        </div>
+
+        <h3>Typical Documentation Required</h3>
+        <ul>
+          <li>Safety Management System manual</li>
+          <li>Safety policy statement signed by accountable executive</li>
+          <li>Hazard register and risk assessment records</li>
+          <li>Safety performance indicators (SPIs) and targets</li>
+          <li>Safety reporting forms and investigation procedures</li>
+          <li>Safety training records and curricula</li>
+          <li>Management review and audit records</li>
+        </ul>
+
+        <h3>How QMS Differs from SMS</h3>
+        <p>SMS focuses on <strong>safety outcomes</strong>&mdash;preventing accidents and incidents through proactive risk management. QMS focuses on <strong>operational quality</strong>&mdash;ensuring your training processes are standardized, repeatable, and producing consistent results. Under the NFTA proposal, schools need both: SMS to manage safety risk, and QMS to prove their procedures actually deliver quality training outcomes.</p>
+
+        <h3>Common Gaps in Flight School Safety Cultures</h3>
+        <ul>
+          <li>No formal hazard reporting system (or one that exists on paper but isn't used)</li>
+          <li>Safety policy that hasn't been reviewed or updated in years</li>
+          <li>No designated accountable executive or safety officer</li>
+          <li>Reactive approach&mdash;only addressing safety after incidents occur</li>
+          <li>No tracking of safety metrics or performance indicators</li>
+          <li>Lack of regular safety meetings or safety promotion activities</li>
+          <li>Training records not standardized across instructors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Are You Ready? -->
+  <div class="section-card" data-section="assessment">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-number">3</span>
+      <span class="section-title">Are You Ready? Self-Assessment Checklist</span>
+      <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Use this quick checklist to gauge where your school stands. This is not a formal audit&mdash;just a starting point for conversation.</p>
+        <ul class="checklist" id="checklist">
+          <li>
+            <input type="checkbox" id="q1" onchange="updateScore()">
+            <label for="q1">Do you have a written Safety Policy signed by an accountable executive?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q2" onchange="updateScore()">
+            <label for="q2">Do you have a hazard identification and reporting process?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q3" onchange="updateScore()">
+            <label for="q3">Do you conduct regular safety risk assessments?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q4" onchange="updateScore()">
+            <label for="q4">Do you have a Safety Management System manual?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q5" onchange="updateScore()">
+            <label for="q5">Do you track safety performance indicators?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q6" onchange="updateScore()">
+            <label for="q6">Do you have a formal Quality Management System?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q7" onchange="updateScore()">
+            <label for="q7">Are your procedures producing measurable, documented results?</label>
+          </li>
+          <li>
+            <input type="checkbox" id="q8" onchange="updateScore()">
+            <label for="q8">Do you have standardized chief and check instructor qualifications?</label>
+          </li>
+        </ul>
+        <div class="assessment-result result-not-started" id="assessmentResult">
+          0 of 8 items checked &mdash; Not Started
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: How PAI Can Help -->
+  <div class="section-card" data-section="help">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-number">4</span>
+      <span class="section-title">How PAI Consulting Can Help</span>
+      <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>PAI Consulting specializes in aviation Safety Management System implementation and regulatory compliance. We help Part 141 flight schools build practical, effective safety and quality programs&mdash;not just paperwork.</p>
+
+        <h3>Our Services</h3>
+        <ul>
+          <li><strong>SMS Program Development</strong> &mdash; Build your Safety Management System from the ground up, tailored to your school's size, fleet, and operations</li>
+          <li><strong>Gap Assessments</strong> &mdash; Identify where your current safety practices fall short of proposed requirements</li>
+          <li><strong>QMS Documentation</strong> &mdash; Develop the quality management procedures and measurement frameworks you'll need</li>
+          <li><strong>Training &amp; Culture Building</strong> &mdash; Equip your team with the knowledge and mindset to make SMS and QMS work in practice</li>
+          <li><strong>Regulatory Strategy</strong> &mdash; Help you understand evolving FAA requirements and prepare ahead of rulemaking</li>
+        </ul>
+
+        <div class="callout">
+          Whether you're starting from scratch or looking to strengthen what you already have, we can help you get ready for what's coming.
+        </div>
+
+        <div class="cta-section">
+          <h3>Ready to Get Started?</h3>
+          <p>Contact us for a no-obligation conversation about your school's SMS and QMS readiness.</p>
+          <a href="mailto:info@paiconsulting.com" class="cta-btn">Contact PAI Consulting</a>
+          <a href="https://paiconsulting.com" target="_blank" rel="noopener" class="cta-btn outline">Visit paiconsulting.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>This guide is based on the National Flight Training Alliance report filed in FAA Docket (Part 141 modernization). The FAA has not yet formally proposed new rules. Content reflects PAI Consulting's interpretation for informational purposes.</p>
+  <p class="copyright">PAI Consulting &copy; 2026</p>
+</footer>
+
+<script>
+// Countdown
+function updateCountdown() {
+  const deadline = new Date('2026-04-10T23:59:59-04:00');
+  const now = new Date();
+  const diff = deadline - now;
+  const el = document.getElementById('countdown');
+  if (diff <= 0) {
+    el.textContent = 'Comment period has closed';
+    el.classList.add('deadline-past');
+    return;
+  }
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  if (days > 1) {
+    el.textContent = days + ' days, ' + hours + ' hours remaining';
+  } else if (days === 1) {
+    el.textContent = '1 day, ' + hours + ' hours remaining';
+  } else {
+    el.textContent = hours + ' hours remaining';
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Accordion
+function toggleSection(header) {
+  const card = header.closest('.section-card');
+  const body = card.querySelector('.section-body');
+  const isOpen = card.classList.contains('open');
+
+  if (isOpen) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(function() {
+      body.style.maxHeight = '0';
+    });
+    card.classList.remove('open');
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.addEventListener('transitionend', function handler() {
+      if (card.classList.contains('open')) {
+        body.style.maxHeight = 'none';
+      }
+      body.removeEventListener('transitionend', handler);
+    });
+  }
+}
+
+// Initialize open sections
+document.querySelectorAll('.section-card.open .section-body').forEach(function(body) {
+  body.style.maxHeight = 'none';
+});
+
+// Checklist scoring
+function updateScore() {
+  var checked = document.querySelectorAll('#checklist input:checked').length;
+  var el = document.getElementById('assessmentResult');
+  var label, cls;
+
+  if (checked === 0) {
+    label = 'Not Started';
+    cls = 'result-not-started';
+  } else if (checked <= 4) {
+    label = 'In Progress';
+    cls = 'result-in-progress';
+  } else {
+    label = 'Well Positioned';
+    cls = 'result-well-positioned';
+  }
+
+  el.className = 'assessment-result ' + cls;
+  el.textContent = checked + ' of 8 items checked \u2014 ' + label;
+}
+</script>
+
+</body>
+</html>
