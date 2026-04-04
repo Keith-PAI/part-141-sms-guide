@@ -678,19 +678,15 @@ body {
           </li>
           <li>
             <input type="checkbox" id="q6" onchange="updateScore()">
-            <label for="q6">Do you have formal quality assurance processes for your training programs?</label>
+            <label for="q6">Are your procedures producing measurable, documented results?</label>
           </li>
           <li>
             <input type="checkbox" id="q7" onchange="updateScore()">
-            <label for="q7">Are your procedures producing measurable, documented results?</label>
-          </li>
-          <li>
-            <input type="checkbox" id="q8" onchange="updateScore()">
-            <label for="q8">Do you have standardized chief and check instructor qualifications?</label>
+            <label for="q7">Do you have standardized chief and check instructor qualifications?</label>
           </li>
         </ul>
         <div class="assessment-result result-not-started" id="assessmentResult">
-          0 of 8 items checked &mdash; Not Started
+          0 of 7 items checked &mdash; Not Started
         </div>
       </div>
     </div>
@@ -849,7 +845,7 @@ function updateScore() {
   if (checked === 0) {
     label = 'Not Started';
     cls = 'result-not-started';
-  } else if (checked <= 4) {
+  } else if (checked <= 3) {
     label = 'In Progress';
     cls = 'result-in-progress';
   } else {
@@ -858,7 +854,7 @@ function updateScore() {
   }
 
   el.className = 'assessment-result ' + cls;
-  el.textContent = checked + ' of 8 items checked \u2014 ' + label;
+  el.textContent = checked + ' of 7 items checked \u2014 ' + label;
 }
 </script>
 
